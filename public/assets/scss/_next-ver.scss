@@ -1,0 +1,14 @@
+@use "./abstracts/index" as *;
+
+
+.faq-accordion-list {
+    .collapse-ani {
+        max-height: 0;
+        overflow: hidden;
+        @include transition4;
+    }
+
+    .collapse-ani.show {
+        max-height: 500px;
+    }
+}

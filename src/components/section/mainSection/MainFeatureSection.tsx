@@ -4,7 +4,26 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function MainFeatureSection() {
-    const [activeTab, setActiveTab] = useState("codeComposer");
+    const [activeTab, setActiveTab] = useState("imageCreator");
+    const [demoIndex, setDemoIndex] = useState(0);
+
+    const activeFeature = FeatureTabItems.find((f) => f.id === activeTab);
+    const demos = activeFeature?.demos || [];
+
+    const goToPrevDemo = () => {
+        setDemoIndex((prev) => (prev === 0 ? demos.length - 1 : prev - 1));
+    };
+
+    const goToNextDemo = () => {
+        setDemoIndex((prev) => (prev === demos.length - 1 ? 0 : prev + 1));
+    };
+
+    const handleTabChange = (tabId: string) => {
+        setActiveTab(tabId);
+        setDemoIndex(0);
+    };
+
+    const currentDemo = demos[demoIndex];
 
     return (
         <>
@@ -20,22 +39,75 @@ export default function MainFeatureSection() {
                             the latest multi-model AI — all in one place.
                         </p>
                     </div>
-                    <div className="tab-content">
-                        {FeatureTabItems.map((item) => (
-                            <div key={item.id} id={item.id} className={`tab-pane ${activeTab === item.id ? "active show" : ""}`} role="tabpanel">
-                                <div className="image-with-text">
-                                    <Image src={`/assets/images/section/${item.img}`} alt={item.title} loading="lazy" width={1617} height={909} />
-                                    <div className="sect-title box-text">
-                                        <h4 className="s-title">{item.title}</h4>
-                                        <p className="s-sub_title text-body-3">
-                                            {item.desc.split(" — ")[0]}
-                                            <br className="d-none d-lg-block" />— {item.desc.split(" — ")[1]}
-                                        </p>
-                                    </div>
+
+                    {/* Demo Display */}
+                    {currentDemo && (
+                        <div className="demo-display" style={{ marginTop: "2rem", textAlign: "center" }}>
+                            {activeFeature?.demoType === "image" && (
+                                <img
+                                    src={currentDemo.url}
+                                    alt="Demo"
+                                    style={{
+                                        maxWidth: "100%",
+                                        height: "auto",
+                                        borderRadius: "12px",
+                                        marginBottom: "1rem",
+                                    }}
+                                />
+                            )}
+
+                            {activeFeature?.demoType === "video" && (
+                                <video
+                                    controls
+                                    style={{
+                                        maxWidth: "100%",
+                                        height: "auto",
+                                        borderRadius: "12px",
+                                        marginBottom: "1rem",
+                                    }}
+                                >
+                                    <source src={currentDemo.url} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            )}
+
+                            {activeFeature?.demoType === "audio" && (
+                                <audio
+                                    controls
+                                    style={{
+                                        width: "100%",
+                                        marginBottom: "1rem",
+                                    }}
+                                >
+                                    <source src={currentDemo.url} type="audio/mpeg" />
+                                    Your browser does not support the audio tag.
+                                </audio>
+                            )}
+
+                            {/* Carousel Controls */}
+                            {demos.length > 0 && (
+                                <div style={{ display: "flex", justifyContent: "center", gap: "1rem", alignItems: "center" }}>
+                                    <button
+                                        onClick={goToPrevDemo}
+                                        className="tf-btn style-transparent"
+                                        style={{ padding: "0.5rem 1rem" }}
+                                    >
+                                        ← Prev
+                                    </button>
+                                    <span style={{ color: "#999" }}>
+                                        {demoIndex + 1} / {demos.length}
+                                    </span>
+                                    <button
+                                        onClick={goToNextDemo}
+                                        className="tf-btn style-transparent"
+                                        style={{ padding: "0.5rem 1rem" }}
+                                    >
+                                        Next →
+                                    </button>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            )}
+                        </div>
+                    )}
                 </div>
                 <span className="br-line"></span>
                 <div className="container">
@@ -44,7 +116,7 @@ export default function MainFeatureSection() {
                             {FeatureTabItems.map((item) => (
                                 <li key={item.id} className={`nav-tab-item ${activeTab === item.id ? "active" : ""}`} role="presentation">
                                     <button
-                                        onClick={() => setActiveTab(item.id)}
+                                        onClick={() => handleTabChange(item.id)}
                                         className={`btn_tab tf-btn style-transparent text-body-3 animate-btn ${
                                             activeTab === item.id ? "active" : ""
                                         }`}

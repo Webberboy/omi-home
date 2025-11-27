@@ -2,7 +2,7 @@ import Header from "@components/header/Header";
 import HeroSection from "@components/section/HeroSection";
 import HeroVideo from "@components/layout/HeroVideo";
 import FeatureSection from "@components/section/FeatureSection";
-import BenefitSection from "@components/section/BenefitSection";
+// import BenefitSection from "@components/section/BenefitSection";
 import HowToUseSection from "@components/section/HowToUseSection";
 import PricingSection from "@components/section/PricingSection";
 import TestimonialSection from "@components/section/TestimonialSection";
@@ -32,7 +32,8 @@ export default function Home() {
 
                 <HeroSection />
                 <FeatureSection />
-                <BenefitSection />
+                {/* Benefit section commented out per request
+                <BenefitSection /> */}
                 <HowToUseSection />
                 <PricingSection />
                 <TestimonialSection />

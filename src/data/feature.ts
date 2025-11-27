@@ -10,25 +10,25 @@ export const FeatureTabItems: FeatureTab[] = [
         id: "imageCreator",
         title: "Image Creator",
         img: "image-creator.webp",
-        desc: "From visuals to code, Qore gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
     {
         id: "imageEnhance",
         title: "Image Enhance",
         img: "image-enhance.webp",
-        desc: "From visuals to code, Qore gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
     {
         id: "videoCreator",
         title: "Video Creator",
         img: "video-creator.webp",
-        desc: "From visuals to code, Qore gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
     {
         id: "textCreator",
         title: "Text Creator",
         img: "text-creator.webp",
-        desc: "From visuals to code, Qore gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
     {
         id: "codeComposer",
@@ -40,7 +40,7 @@ export const FeatureTabItems: FeatureTab[] = [
         id: "websiteBuilder",
         title: "Website Builder",
         img: "website-builder.webp",
-        desc: "From visuals to code, Qore gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
 ];
 

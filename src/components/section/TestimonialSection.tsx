@@ -37,7 +37,7 @@ export function MainTestimonialSection() {
                     <div className="sect-title wow fadeInUp">
                         <h2 className="s-title font-3 m-0">
                             What people say <br />
-                            about Qore.
+                            about HeyOmi.
                         </h2>
                     </div>
                     <div className="testimonial-slide-wrap">

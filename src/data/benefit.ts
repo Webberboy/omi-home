@@ -8,12 +8,12 @@ export const benefitItems: benefitItem[] = [
     {
         icon: "platform.svg",
         title: "All-in-one platform",
-        sub: "No more juggling tools. Qore unifies content, design, code, and video.",
+        sub: "No more juggling tools. HeyOmi unifies content, design, code, and video.",
     },
     {
         icon: "ai-core.svg",
         title: "Multi-model AI core",
-        sub: "ChatGPT, Claude, Gemini — Qore picks the smartest engine for every task.",
+        sub: "ChatGPT, Claude, Gemini — HeyOmi picks the smartest engine for every task.",
     },
     {
         icon: "control.svg",
@@ -23,7 +23,7 @@ export const benefitItems: benefitItem[] = [
     {
         icon: "speed.svg",
         title: "Speed that scales",
-        sub: "From solo to teams, Qore delivers fast outputs — even under heavy loads.",
+        sub: "From solo to teams, HeyOmi delivers fast outputs — even under heavy loads.",
     },
     {
         icon: "secure.svg",
@@ -33,6 +33,6 @@ export const benefitItems: benefitItem[] = [
     {
         icon: "evolving.svg",
         title: "Always evolving",
-        sub: "Qore improves weekly with better prompts, UI, and models — for free.",
+        sub: "HeyOmi improves weekly with better prompts, UI, and models — for free.",
     },
 ];

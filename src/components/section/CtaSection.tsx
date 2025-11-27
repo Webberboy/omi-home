@@ -36,7 +36,7 @@ export function MainCtaSection() {
                             Your Creativity?
                         </h2>
                         <p className="s-sub_title">
-                            Join thousands of creators using Qore to streamline <br className="d-none d-lg-block" />
+                            Join thousands of creators using HeyOmi to streamline <br className="d-none d-lg-block" />
                             their ideas and accelerate content creation.
                         </p>
                     </div>

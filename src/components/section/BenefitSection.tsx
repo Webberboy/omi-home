@@ -10,7 +10,7 @@ export default function BenefitSection() {
             <section className="section-benefit">
                 <SectHeader value={3} label="BENEFITS" />
                 <span className="br-line"></span>
-                <SectTagline name="WHY QORE WORKS SMARTER." />
+                <SectTagline name="WHY HEYOMI WORKS SMARTER." />
                 <span className="br-line"></span>
                 <MainBenefitSection />
                 <span className="br-line"></span>
@@ -42,7 +42,7 @@ export function MainBenefitSection() {
                                 Backed by cutting-edge AI.
                             </h2>
                             <p className="s-sub_title">
-                                Qore combines powerful AI models with a unified creative workspace <br className="d-none d-lg-block" />— built for
+                                HeyOmi combines powerful AI models with a unified creative workspace <br className="d-none d-lg-block" />— built for
                                 speed, clarity, and control.
                             </p>
                         </div>

@@ -9,7 +9,7 @@ export default function HowToUseSection() {
             <section className="section-how-to" id="howToUse">
                 <SectHeader value={4} label="HOW TO USE" />
                 <span className="br-line"></span>
-                <SectTagline name={"HOW TO USE QORE."} />
+                <SectTagline name={"HOW TO USE HEYOMI."} />
                 <span className="br-line"></span>
                 <MainHowSection />
                 <span className="br-line"></span>

@@ -14,9 +14,9 @@ export default function MainFeatureSection() {
                 </div>
                 <div className="container">
                     <div className="sect-title wow fadeInUp">
-                        <h2 className="s-title font-3">What You Can Do with Qore</h2>
+                        <h2 className="s-title font-3">What You Can Do with HeyOmi</h2>
                         <p className="s-sub_title">
-                            From visuals to code, Qore gives you a full creative suite powered by <br className="d-none d-lg-block" />
+                            From visuals to code, HeyOmi gives you a full creative suite powered by <br className="d-none d-lg-block" />
                             the latest multi-model AI — all in one place.
                         </p>
                     </div>

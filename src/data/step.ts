@@ -25,7 +25,7 @@ export const stepItems: stepItem[] = [
         id: "step3",
         number: "STEP 03",
         title: "Get results",
-        desc: "Qore returns multiple outputs. Choose your favorite, refine it, or keep exploring more options.",
+        desc: "HeyOmi returns multiple outputs. Choose your favorite, refine it, or keep exploring more options.",
         image: "step-3.webp",
     },
 ];

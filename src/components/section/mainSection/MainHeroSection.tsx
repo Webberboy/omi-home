@@ -1,5 +1,5 @@
 "use client";
-import { assitantsAiItems } from "@/src/data/assitantsAi";
+import { assitantsAiItems } from "@/data/assitantsAi";
 import { useEffect, useState } from "react";
 
 export function MainHeroSection() {

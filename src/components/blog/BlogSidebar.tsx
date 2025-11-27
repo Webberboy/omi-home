@@ -1,5 +1,5 @@
-import { sidebarCategory, sidebarRecent, sidebarTags } from "@/src/data/blog";
-import { caseStudyItems } from "@/src/data/caseStudies";
+import { sidebarCategory, sidebarRecent, sidebarTags } from "@/data/blog";
+import { caseStudyItems } from "@/data/caseStudies";
 import Image from "next/image";
 import Link from "next/link";
 

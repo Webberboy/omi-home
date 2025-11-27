@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { caseStudyItems2 } from "@/src/data/caseStudies";
+import { caseStudyItems2 } from "@/data/caseStudies";
 import Link from "next/link";
 import Image from "next/image";
 

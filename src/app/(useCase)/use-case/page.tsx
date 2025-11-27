@@ -1,10 +1,10 @@
-import Layout from "@/src/components/layout/Layout";
-import BenefitSectionV2 from "@/src/components/section/BenefitSectionV2";
-import BreakSection from "@/src/components/section/BreakSection";
-import { MainFaqSection } from "@/src/components/section/FaqSection";
-import ImageTextSection from "@/src/components/section/ImageTextSection";
-import PageTitle from "@/src/components/section/PageTitle";
-import PricingSectionV2 from "@/src/components/section/PricingSectionV2";
+import Layout from "@/components/layout/Layout";
+import BenefitSectionV2 from "@/components/section/BenefitSectionV2";
+import BreakSection from "@/components/section/BreakSection";
+import { MainFaqSection } from "@/components/section/FaqSection";
+import ImageTextSection from "@/components/section/ImageTextSection";
+import PageTitle from "@/components/section/PageTitle";
+import PricingSectionV2 from "@/components/section/PricingSectionV2";
 
 export default function PageUseCase() {
     return (

@@ -1,5 +1,5 @@
 "use client";
-import { navItems2 } from "@/src/data/navItem";
+import { navItems2 } from "@/data/navItem";
 import Link from "next/link";
 import { useEffect } from "react";
 

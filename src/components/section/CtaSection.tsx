@@ -3,7 +3,7 @@ import { SectHeader } from "@components/section/SectHeader";
 import { SectTagline } from "@components/section/SectTagline";
 import { SectBottom } from "@components/section/SectBottom";
 import Image from "next/image";
-import { submitForm } from "@/src/actions/submitForm";
+import { submitForm } from "@/actions/submitForm";
 
 export default function CtaSection() {
     return (

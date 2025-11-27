@@ -1,4 +1,4 @@
-import { plans } from "@/src/data/plan";
+import { plans } from "@/data/plan";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";

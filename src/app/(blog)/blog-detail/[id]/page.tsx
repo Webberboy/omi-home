@@ -1,8 +1,8 @@
-import BlogCanvas from "@/src/components/blog/BlogCanvas";
-import BlogDetail from "@/src/components/blog/BlogDetail";
-import Layout from "@/src/components/layout/Layout";
-import PageTitle from "@/src/components/section/PageTitle";
-import { blogItems, BlogItem } from "@/src/data/blog";
+import BlogCanvas from "@/components/blog/BlogCanvas";
+import BlogDetail from "@/components/blog/BlogDetail";
+import Layout from "@/components/layout/Layout";
+import PageTitle from "@/components/section/PageTitle";
+import { blogItems, BlogItem } from "@/data/blog";
 import { notFound } from "next/navigation";
 
 interface PageBlogProps {

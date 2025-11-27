@@ -1,5 +1,5 @@
-import Layout from "@/src/components/layout/Layout";
-import PageTitle from "@/src/components/section/PageTitle";
+import Layout from "@/components/layout/Layout";
+import PageTitle from "@/components/section/PageTitle";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -1,6 +1,6 @@
-import { SectHeader } from "@/src/components/section/SectHeader";
-import { SectTagline } from "@/src/components/section/SectTagline";
-import { SectBottom } from "@/src/components/section/SectBottom";
+import { SectHeader } from "@/components/section/SectHeader";
+import { SectTagline } from "@/components/section/SectTagline";
+import { SectBottom } from "@/components/section/SectBottom";
 import { benefitItems } from "@data/benefit";
 import Image from "next/image";
 

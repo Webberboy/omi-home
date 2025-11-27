@@ -1,7 +1,7 @@
-import Layout from "@/src/components/layout/Layout";
-import PageTitle from "@/src/components/section/PageTitle";
-import VideoGenerateSection from "@/src/components/section/VideoGenerateSection";
-import BreakSection from "@/src/components/section/BreakSection";
+import Layout from "@/components/layout/Layout";
+import PageTitle from "@/components/section/PageTitle";
+import VideoGenerateSection from "@/components/section/VideoGenerateSection";
+import BreakSection from "@/components/section/BreakSection";
 
 export default function GeneratePage() {
     return (

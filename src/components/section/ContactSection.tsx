@@ -1,4 +1,4 @@
-import { boxIconTextProps2 } from "@/src/data/boxIconText";
+import { boxIconTextProps2 } from "@/data/boxIconText";
 import Image from "next/image";
 import Link from "next/link";
 

@@ -10,7 +10,7 @@ import FaqSection from "@components/section/FaqSection";
 import CtaSection from "@components/section/CtaSection";
 import Footer from "@components/footer/Footer";
 import GoTopButton from "@components/common/GoTop";
-import HackerTextEffect from "@/src/components/common/HackerTextEffect";
+import HackerTextEffect from "@/components/common/HackerTextEffect";
 
 export default function Home() {
     return (

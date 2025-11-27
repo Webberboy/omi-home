@@ -1,4 +1,4 @@
-import { SectHeader } from "@/src/components/section/SectHeader";
+import { SectHeader } from "@/components/section/SectHeader";
 import FooterColumn from "./FooterColumn";
 import Image from "next/image";
 import Link from "next/link";

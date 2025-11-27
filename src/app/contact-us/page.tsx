@@ -1,10 +1,10 @@
-import Map from "@/src/components/common/Map";
-import Layout from "@/src/components/layout/Layout";
-import BreakSection from "@/src/components/section/BreakSection";
-import ContactSection from "@/src/components/section/ContactSection";
-import GetSection from "@/src/components/section/GetSection";
-import ImageTextSection from "@/src/components/section/ImageTextSection";
-import PageTitle from "@/src/components/section/PageTitle";
+import Map from "@/components/common/Map";
+import Layout from "@/components/layout/Layout";
+import BreakSection from "@/components/section/BreakSection";
+import ContactSection from "@/components/section/ContactSection";
+import GetSection from "@/components/section/GetSection";
+import ImageTextSection from "@/components/section/ImageTextSection";
+import PageTitle from "@/components/section/PageTitle";
 
 export default function PageContact() {
     return (

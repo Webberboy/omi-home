@@ -1,5 +1,5 @@
 "use client";
-import { FeatureTabItems } from "@/src/data/feature";
+import { FeatureTabItems } from "@/data/feature";
 import Image from "next/image";
 import { useState } from "react";
 

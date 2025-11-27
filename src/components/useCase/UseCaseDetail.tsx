@@ -1,7 +1,7 @@
 import Image from "next/image";
 import BlogSidebar from "../blog/BlogSidebar";
 import BlogCanvas from "../blog/BlogCanvas";
-import { featureTabItems2 } from "@/src/data/feature";
+import { featureTabItems2 } from "@/data/feature";
 import Link from "next/link";
 import BlogComment from "../blog/BlogComment";
 import BlogAddReview from "../blog/BlogAddReview";

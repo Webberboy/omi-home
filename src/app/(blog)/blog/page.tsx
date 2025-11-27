@@ -1,8 +1,8 @@
-import BlogCanvas from "@/src/components/blog/BlogCanvas";
-import BlogSidebar from "@/src/components/blog/BlogSidebar";
-import Layout from "@/src/components/layout/Layout";
-import PageTitle from "@/src/components/section/PageTitle";
-import { blogItems } from "@/src/data/blog";
+import BlogCanvas from "@/components/blog/BlogCanvas";
+import BlogSidebar from "@/components/blog/BlogSidebar";
+import Layout from "@/components/layout/Layout";
+import PageTitle from "@/components/section/PageTitle";
+import { blogItems } from "@/data/blog";
 import Image from "next/image";
 import Link from "next/link";
 

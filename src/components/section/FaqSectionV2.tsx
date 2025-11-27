@@ -1,5 +1,5 @@
 "use client";
-import { faqItems2 } from "@/src/data/faq";
+import { faqItems2 } from "@/data/faq";
 import Image from "next/image";
 import { useState } from "react";
 

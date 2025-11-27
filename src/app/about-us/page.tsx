@@ -1,11 +1,11 @@
-import Layout from "@/src/components/layout/Layout";
-import BenefitSectionV2 from "@/src/components/section/BenefitSectionV2";
-import BreakSection from "@/src/components/section/BreakSection";
-import HeroAbout from "@/src/components/section/HeroAbout";
-import ImageTextSection from "@/src/components/section/ImageTextSection";
-import PageTitle from "@/src/components/section/PageTitle";
-import TeamSection from "@/src/components/section/TeamSection";
-import { MainTestimonialSection } from "@/src/components/section/TestimonialSection";
+import Layout from "@/components/layout/Layout";
+import BenefitSectionV2 from "@/components/section/BenefitSectionV2";
+import BreakSection from "@/components/section/BreakSection";
+import HeroAbout from "@/components/section/HeroAbout";
+import ImageTextSection from "@/components/section/ImageTextSection";
+import PageTitle from "@/components/section/PageTitle";
+import TeamSection from "@/components/section/TeamSection";
+import { MainTestimonialSection } from "@/components/section/TestimonialSection";
 
 export default function PageAboutUs() {
     return (

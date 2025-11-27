@@ -1,5 +1,5 @@
 "use client";
-import { navItems2 } from "@/src/data/navItem";
+import { navItems2 } from "@/data/navItem";
 import Image from "next/image";
 import Link from "next/link";
 

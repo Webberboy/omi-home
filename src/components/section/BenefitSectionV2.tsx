@@ -1,4 +1,4 @@
-import { boxIconTextProps } from "@/src/data/boxIconText";
+import { boxIconTextProps } from "@/data/boxIconText";
 import Image from "next/image";
 
 export default function BenefitSectionV2() {

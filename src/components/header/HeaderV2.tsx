@@ -4,7 +4,7 @@ import Link from "next/link";
 import NavMenu from "../navigation/NavMenu";
 import NavMobileV2 from "../navigation/NavMobileV2";
 import { useEffect, useState } from "react";
-import useHeaderSticky from "@/src/utils/useHeaderSticky";
+import useHeaderSticky from "@/utils/useHeaderSticky";
 
 export default function HeaderV2() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

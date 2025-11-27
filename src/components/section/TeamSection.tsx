@@ -1,4 +1,4 @@
-import { teamDataProp } from "@/src/data/team";
+import { teamDataProp } from "@/data/team";
 import Image from "next/image";
 import Link from "next/link";
 

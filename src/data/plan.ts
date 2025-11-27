@@ -23,7 +23,7 @@ export const plans: Plan[] = [
         duration: "forever",
         description: "Perfect for testing and light creative needs.",
         buttonClass: "style-3",
-        image: "/assets/images/section/color-bg-3.webp",
+        image: "",
         features: [{ text: "50 prompts / mo" }, { text: "10 images / mo (up to 5MB)" }, { text: "2 videos / mo (720p)" }, { text: "Basic AI model" }],
     },
     {
@@ -33,7 +33,7 @@ export const plans: Plan[] = [
         duration: "per user / mo",
         description: "Unlock more power with advanced models and bigger limits.",
         buttonClass: "style-2",
-        image: "/assets/images/section/color-bg-3.webp",
+        image: "",
         typeClass: "type-2",
         features: [
             { text: "500 prompts / mo" },
@@ -50,7 +50,7 @@ export const plans: Plan[] = [
         duration: "per user / mo",
         description: "Everything unlimited. For pros, teams, and power creators.",
         buttonClass: "style-3",
-        image: "/assets/images/section/color-bg-3.webp",
+        image: "",
         features: [
             { text: "Unlimited prompts" },
             { text: "Unlimited images (up to 25MB)" },

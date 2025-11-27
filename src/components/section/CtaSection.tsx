@@ -41,15 +41,6 @@ export function MainCtaSection() {
                         </p>
                     </div>
                     <FormGet />
-                    <div className="row">
-                        <div className="col-11 col-md-8 col-xl-4 mx-auto">
-                            <div className="image wow bounceInScale has-over_video">
-                                <Image width={424} height={424} src="/assets/images/section/step-1.webp" alt="Image" />
-                                <span className="hafl-plus start-0 top-0 rotate-top_left "></span>
-                                <span className="hafl-plus end-0 top-0 rotate-top_right "></span>
-                            </div>
-                        </div>
-                    </div>
                     <div className="position-relative has-hafl_plus">
                         <span className="hafl-plus pst-left_bot item_bot wow bounceInScale"></span>
                         <span className="hafl-plus pst-right_bot item_bot wow bounceInScale"></span>

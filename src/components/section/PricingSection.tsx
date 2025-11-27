@@ -66,9 +66,11 @@ export function MainPricingSection() {
                                     </div>
                                 </div>
 
-                                <div className="item">
-                                    <Image width={390} height={293} src={plan.image} alt="Plan background" className="lazyload" loading="lazy" />
-                                </div>
+                                {plan.image && (
+                                        <div className="item">
+                                            <Image width={390} height={293} src={plan.image} alt="Plan background" className="lazyload" loading="lazy" />
+                                        </div>
+                                    )}
                             </div>
                         ))}
                         <span className="hafl-plus pst-left_bot item_bot wow bounceInScale"></span>

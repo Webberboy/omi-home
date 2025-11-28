@@ -14,16 +14,12 @@ export const navItems: NavItem[] = [
         link: "features",
     },
     {
-        name: "How to use",
-        link: "howToUse",
-    },
-    {
-        name: "Pricing",
-        link: "pricing",
-    },
-    {
         name: "FAQs",
         link: "FAQs",
+    },
+    {
+        name: "Get Started",
+        link: "#",
     },
 ];
 

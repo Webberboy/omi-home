@@ -18,7 +18,7 @@ export default function SectHeaderClient({ value, label }: Props) {
                 <span className="text-white">
                     0<OdometerComponent value={value} />
                 </span>{" "}
-                / 09 ]
+                / 04 ]
             </div>
             <p className="s-label">
                 [ <span className="text-white hacker-text_transform">{label}</span> ]

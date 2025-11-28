@@ -72,11 +72,12 @@ export function HeaderRight({ onOpenMenu }: { onOpenMenu: () => void }) {
         <>
             <div className="header-right">
                 <div className="btn_group">
+                    {/* Log in button commented out per request
                     <Link href="/" className="tf-btn text-body-3 animate-btn d-none d-sm-flex">
                         Log in
-                    </Link>
-                    <Link href="/" className="tf-btn text-body-3 style-2 animate-btn animate-dark">
-                        Get started
+                    </Link> */}
+                    <Link href="#section-cta" className="tf-btn text-body-3 style-2 animate-btn animate-dark scroll-link">
+                        Join Waitlist
                     </Link>
                     <button type="button" className="btn-menu_mobile d-lg-none" onClick={onOpenMenu}>
                         <i className="icon icon-menu"></i>
@@ -96,8 +97,8 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                         <Image width={75} height={20} src="/assets/images/logo/logo.svg" alt="LOGO" />
                     </div>
                     <div className="btn_group">
-                        <Link href="/" className="tf-btn style-2">
-                            Get started
+                        <Link href="#section-cta" className="tf-btn style-2 scroll-link">
+                            Join Waitlist
                         </Link>
                         <span className="icon-close-popup" onClick={onClose}>
                             <i className="icon-close"></i>
@@ -120,9 +121,10 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
                 </div>
 
                 <div className="canvas-footer">
+                    {/* Login button commented out per request
                     <Link href="/" className="tf-btn w-100 animate-btn style-high">
                         Login
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 

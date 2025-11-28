@@ -37,15 +37,15 @@ const grotesk = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "HeyOmi - AI-Powered Smart Home",
-    description: "HeyOmi is an AI-powered smart home platform, optimized for high performance and modern design.",
-    keywords: ["HeyOmi", "Smart Home", "AI", "Home Automation", "React", "Next.js"],
+    title: "HeyOmi - AI Video Generator",
+    description: "HeyOmi is an AI-powered video generation platform, optimized for high performance and modern design.",
+    keywords: ["HeyOmi", "AI Video", "Video Generator", "AI Creation", "React", "Next.js"],
     robots: "index, follow",
     authors: [{ name: "Themesflat", url: "https://themesflat.co" }],
     icons: {
-        icon: "/assets/images/logo/favicon.svg",
-        shortcut: "/assets/images/logo/favicon.svg",
-        apple: "/assets/images/logo/favicon.svg",
+        icon: "/world.svg",
+        shortcut: "/world.svg",
+        apple: "/world.svg",
     },
 };
 export default function RootLayout({
@@ -55,7 +55,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className={`${geist.className} ${mono.variable} ${grotesk.variable}`}>
-            <head></head>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            </head>
             <body>{children}</body>
         </html>
     );

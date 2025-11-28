@@ -57,7 +57,7 @@ export function MainHeroSection() {
 export function BoxAskWrap() {
     return (
         <>
-            <div className="box-ask-wrap">
+            {/* <div className="box-ask-wrap">
                 <div className="box-ask">
                     <AskForm />
                 </div>
@@ -65,7 +65,7 @@ export function BoxAskWrap() {
                 <span className="hafl-plus pst-right_bot item_bot wow bounceInScale"></span>
                 <span className="hafl-plus pst-left_top item_top wow bounceInScale"></span>
                 <span className="hafl-plus pst-right_top item_top wow bounceInScale"></span>
-            </div>
+            </div> */}
         </>
     );
 }

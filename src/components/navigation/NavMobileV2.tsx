@@ -12,9 +12,9 @@ export default function NavMobileV2({ isOpen, onClose }: { isOpen: boolean; onCl
                         <Image width={75} height={20} src="/assets/images/logo/logo.svg" alt="LOGO" />
                     </div>
                     <div className="btn_group">
-                        <Link href="/get-started" className="tf-btn style-2">
+                        {/* <Link href="/get-started" className="tf-btn style-2">
                             Get started
-                        </Link>
+                        </Link> */}
                         <span className="icon-close-popup" onClick={onClose}>
                             <i className="icon-close"></i>
                         </span>

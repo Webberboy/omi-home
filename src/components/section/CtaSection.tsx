@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { SectHeader } from "@components/section/SectHeader";
 import { SectTagline } from "@components/section/SectTagline";
 import { SectBottom } from "@components/section/SectBottom";
@@ -52,18 +53,52 @@ export function MainCtaSection() {
 }
 
 export function FormGet() {
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [email, setEmail] = useState('');
+
     async function handleSubmit(formData: FormData) {
-        const res = await submitForm(formData);
-        alert(res.message);
+        setIsLoading(true);
+        
+        // Simulate form submission delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Simulate successful submission
+        setIsSubmitted(true);
+        setIsLoading(false);
+        
+        // Get email from form data
+        const submittedEmail = formData.get('email') as string;
+        setEmail(submittedEmail);
     }
+
+    if (isSubmitted) {
+        return (
+            <div className="form-success">
+                <div className="success-message">
+                    <h3>Thanks for joining the waitlist!</h3>
+                    <p>We'll inform you when we launch.</p>
+                    <div className="success-icon">✓</div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <form className="form-get" action={handleSubmit}>
             <div className="form-content">
                 <fieldset>
-                    <input type="email" name="email" placeholder="Enter your email" required />
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Enter your email" 
+                        required 
+                        style={{fontSize: '16px'}} 
+                        disabled={isLoading}
+                    />
                 </fieldset>
-                <button className="tf-btn style-2 style-high animate-btn" type="submit">
-                    <span>Submit</span>
+                <button className="tf-btn style-2 style-high animate-btn" type="submit" disabled={isLoading}>
+                    <span>{isLoading ? 'Submitting...' : 'Submit'}</span>
                 </button>
             </div>
         </form>

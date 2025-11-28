@@ -17,10 +17,10 @@ export const navItems: NavItem[] = [
         name: "FAQs",
         link: "FAQs",
     },
-    {
-        name: "Get Started",
-        link: "#",
-    },
+    // {
+    //     name: "Get Started",
+    //     link: "#",
+    // },
 ];
 
 export const navItems2: NavItem[] = [

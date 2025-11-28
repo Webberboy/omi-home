@@ -35,9 +35,9 @@ export default function HeaderV2() {
                                     <Link href="/login" className="tf-btn text-body-3 animate-btn d-none d-sm-flex">
                                         Log in
                                     </Link>
-                                    <Link href="/get-started" className="tf-btn text-body-3 style-2 animate-btn animate-dark">
+                                    {/* <Link href="/get-started" className="tf-btn text-body-3 style-2 animate-btn animate-dark">
                                         Get started
-                                    </Link>
+                                    </Link> */}
                                     <button type="button" className="btn-menu_mobile d-lg-none" onClick={onOpenMenu}>
                                         <i className="icon icon-menu"></i>
                                     </button>

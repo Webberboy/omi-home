@@ -22,7 +22,7 @@ export default function FormGet2() {
                             <label className="label-text text-body-3 text-white" htmlFor="email">
                                 Email
                             </label>
-                            <input type="text" id="email" placeholder="john@example.com" required />
+                            <input type="text" id="email" placeholder="john@example.com" required style={{fontSize: '16px'}} />
                         </fieldset>
                         <fieldset>
                             <label className="label-text text-body-3 text-white" htmlFor="phone">

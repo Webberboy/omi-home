@@ -25,7 +25,7 @@ export default function BlogAddReview() {
                                 <label className="text-body-3 text-white" htmlFor="email">
                                     Email
                                 </label>
-                                <input type="email" id="email" placeholder="john@example.com" required />
+                                <input type="email" id="email" placeholder="john@example.com" required style={{fontSize: '16px'}} />
                             </fieldset>
                             <fieldset>
                                 <label className="text-body-3 text-white" htmlFor="phone">

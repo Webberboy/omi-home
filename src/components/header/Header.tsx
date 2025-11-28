@@ -42,7 +42,7 @@ export function HeaderLeft() {
         <>
             <div className="header-left">
                 <Link href="/" className="logo-site">
-                    <Image width={75} height={20} src="/assets/images/logo/logo.svg" alt="LOGO" />
+                    <span className="text-logo" style={{ fontSize: "18px", fontWeight: "bold", color: "#fff", fontFamily: "Mono", textTransform: "uppercase" }}>HeyOmi</span>
                 </Link>
             </div>
         </>
@@ -93,9 +93,9 @@ export function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () =
         <>
             <div className={`offcanvas offcanvas-start canvas-mb ${isOpen ? "show" : ""}`} id="mobileMenu">
                 <div className="canvas-header">
-                    <div className="logo-site">
-                        <Image width={75} height={20} src="/assets/images/logo/logo.svg" alt="LOGO" />
-                    </div>
+                    <Link href="/" className="logo-site">
+                        <span className="text-logo" style={{ fontSize: "18px", fontWeight: "bold", color: "#fff", fontFamily: "Mono", textTransform: "uppercase" }}>HeyOmi</span>
+                    </Link>
                     <div className="btn_group">
                         <Link href="#section-cta" className="tf-btn style-2 scroll-link">
                             Join Waitlist

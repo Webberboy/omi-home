@@ -22,7 +22,7 @@ export default function HeaderV2() {
                         <div className="col-5 col-lg-3">
                             <div className="header-left">
                                 <Link href="/" className="logo-site">
-                                    <Image width={75} height={20} src="/assets/images/logo/logo.svg" alt="LOGO" />
+                                    <span className="text-logo" style={{ fontSize: "18px", fontWeight: "bold", color: "#fff", fontFamily: "Mono", textTransform: "uppercase" }}>HeyOmi</span>
                                 </Link>
                             </div>
                         </div>

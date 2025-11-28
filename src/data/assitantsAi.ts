@@ -1,5 +1,6 @@
 export interface assitantsAiItem {
-    icon: string;
+    icon?: string;
+    logo?: string;
     name: string;
 }
 
@@ -13,11 +14,11 @@ export const assitantsAiItems: assitantsAiItem[] = [
         name: "Veo 3.",
     },
     {
-        icon: "icon-cloud",
-        name: "Wan.",
+        logo: "/sunoo.svg",
+        name: "Suno.",
     },
     {
-        icon: "icon-gpt",
+        logo: "/Kling.svg",
         name: "Kling.",
     },
 ];

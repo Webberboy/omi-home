@@ -18,11 +18,20 @@ export function MainHeroSection() {
                 <div className="container">
                     <div className="sect-title wow fadeInUp">
                         <h1 className="s-title font-3">
-                            Create Smarter. Launch Faster. <br />
+                            Create Anything. Effortlessly. <br />
                             <div className="text-change_wrap">
                                 {assitantsAiItems.map((item, idx) => (
                                     <div key={idx} className={`text-change_rotating  ${idx === index ? "active" : ""}`}>
-                                        Built on<span className={`icon ${item.icon}`}></span>
+                                        Built on
+                                        {item.logo ? (
+                                            <img 
+                                                src={item.logo} 
+                                                alt={item.name}
+                                                style={{ height: "0.9em", width: "auto", margin: "0 0.15em 0 0.1em", verticalAlign: "-0.1em", display: "inline-block" }}
+                                            />
+                                        ) : (
+                                            <span className={`icon ${item.icon}`} style={{ margin: "0 0.15em" }}></span>
+                                        )}
                                         {item.name}
                                     </div>
                                 ))}

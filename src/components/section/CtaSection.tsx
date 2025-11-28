@@ -4,7 +4,7 @@ import { SectHeader } from "@components/section/SectHeader";
 import { SectTagline } from "@components/section/SectTagline";
 import { SectBottom } from "@components/section/SectBottom";
 import Image from "next/image";
-import { submitForm } from "@/actions/submitForm";
+// import { submitForm } from "@/actions/submitForm";
 
 export default function CtaSection() {
     return (
@@ -55,9 +55,9 @@ export function MainCtaSection() {
 export function FormGet() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [email, setEmail] = useState('');
+    // const [email, setEmail] = useState('');
 
-    async function handleSubmit(formData: FormData) {
+    async function handleSubmit(/* formData: FormData */) {
         setIsLoading(true);
         
         // Simulate form submission delay
@@ -68,8 +68,8 @@ export function FormGet() {
         setIsLoading(false);
         
         // Get email from form data
-        const submittedEmail = formData.get('email') as string;
-        setEmail(submittedEmail);
+        // const submittedEmail = formData.get('email') as string;
+        // setEmail(submittedEmail);
     }
 
     if (isSubmitted) {
@@ -77,7 +77,7 @@ export function FormGet() {
             <div className="form-success">
                 <div className="success-message">
                     <h3>Thanks for joining the waitlist!</h3>
-                    <p>We'll inform you when we launch.</p>
+                    <p>We&apos;ll inform you when we launch.</p>
                     <div className="success-icon">✓</div>
                 </div>
             </div>

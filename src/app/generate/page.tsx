@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import PageTitle from "@/components/section/PageTitle";
-import VideoGenerateSection from "@/components/section/VideoGenerateSection";
+// import VideoGenerateSection from "@/components/section/VideoGenerateSection";
 import BreakSection from "@/components/section/BreakSection";
 
 export default function GeneratePage() {
@@ -8,7 +8,8 @@ export default function GeneratePage() {
         <>
             <Layout>
                 <PageTitle name="AI VIDEO GENERATOR" />
-                <VideoGenerateSection />
+                {/* VideoGenerateSection commented out - not needed for homepage only */}
+                {/* <VideoGenerateSection /> */}
                 <BreakSection />
             </Layout>
         </>

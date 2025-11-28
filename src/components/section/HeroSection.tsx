@@ -1,7 +1,7 @@
 import { SectHeader } from "@/components/section/SectHeader";
 import { SectTagline } from "@/components/section/SectTagline";
 import { SectBottom } from "@/components/section/SectBottom";
-import SlideBrand from "@components/common/SlideBrand";
+// import SlideBrand from "@components/common/SlideBrand";
 import { MainHeroSection } from "./mainSection/MainHeroSection";
 
 export default function HeroSection() {

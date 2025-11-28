@@ -5,7 +5,7 @@ import useHeaderSticky from "@utils/useHeaderSticky";
 import { scrollLink } from "@utils/scrollLink";
 import Link from "next/link";
 import WowEffect from "../common/WowEffect";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Header() {
     const isSticky = useHeaderSticky();

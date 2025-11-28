@@ -32,12 +32,12 @@ export function MainCtaSection() {
                 <div className="container">
                     <div className="sect-title wow fadeInUp">
                         <h2 className="s-title font-3">
-                            Be Among the First <br />
-                            to Transform Your Creative Vision
+                            Unlock Your Creative <br />
+                            Potential Today
                         </h2>
                         <p className="s-sub_title">
-                            Join thousands of creators already on the waitlist. Get early access to HeyOmi <br className="d-none d-lg-block" />
-                            and unlock your unlimited creative potential.
+                            Get early access to HeyOmi and start creating professional-quality content <br className="d-none d-lg-block" />
+                            with the power of AI.
                         </p>
                     </div>
                     <FormGet />

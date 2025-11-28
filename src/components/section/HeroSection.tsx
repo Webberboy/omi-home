@@ -14,8 +14,9 @@ export default function HeroSection() {
                 <span className="br-line"></span>
                 <MainHeroSection />
                 <span className="br-line"></span>
+                {/* SlideBrand (Trusted by) section commented out per request
                 <SlideBrand />
-                <span className="br-line"></span>
+                <span className="br-line"></span> */}
                 <SectBottom />
                 <span className="br-line"></span>
             </section>

@@ -78,8 +78,8 @@ export default function MainFeatureSection() {
                     <div className="sect-title wow fadeInUp">
                         <h2 className="s-title font-3">What You Can Do with HeyOmi</h2>
                         <p className="s-sub_title">
-                            Generate cinematic videos, stunning images, and original music from text prompts. <br className="d-none d-lg-block" />
-                            Your all-in-one creative studio powered by advanced multi-model AI.
+                            Create stunning videos, images, and music from simple text prompts. <br className="d-none d-lg-block" />
+                            Your all-in-one creative studio powered by AI.
                         </p>
                     </div>
 

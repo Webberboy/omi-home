@@ -6,14 +6,18 @@ export interface assitantsAiItem {
 export const assitantsAiItems: assitantsAiItem[] = [
     {
         icon: "icon-gpt",
-        name: "ChatGPT.",
+        name: "Sora 2.",
     },
     {
         icon: "icon-gemini",
-        name: "Gemini.",
+        name: "Veo 3.",
     },
     {
         icon: "icon-cloud",
-        name: "Claude.",
+        name: "Wan.",
+    },
+    {
+        icon: "icon-gpt",
+        name: "Kling.",
     },
 ];

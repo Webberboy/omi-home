@@ -42,7 +42,8 @@ export default function Home() {
                 <TestimonialSection /> */}
                 <FaqSection />
                 <CtaSection />
-                <Footer />
+                {/* Footer section commented out per request
+                <Footer /> */}
             </div>
         </>
     );

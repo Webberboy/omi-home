@@ -29,8 +29,8 @@ export function MainHeroSection() {
                             </div>
                         </h1>
                         <p className="s-sub_title">
-                            Design, generate, and build anything with a multi-model AI engine — <br className="d-none d-sm-block" />
-                            one platform, endless possibilities.
+                            Generate videos, images, and music from text prompts. <br className="d-none d-sm-block" />
+                            All your creative tools in one unified AI platform.
                         </p>
                     </div>
                 </div>

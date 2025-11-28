@@ -5,24 +5,28 @@ interface faqItem {
 
 export const faqItems: faqItem[] = [
     {
-        title: "What can I use HeyOmi for?",
-        label: "You can generate taglines, short descriptions, ideas for visuals, social posts, and more in seconds.",
+        title: "What can I create with HeyOmi?",
+        label: "Generate cinematic videos, stunning images, original music, and more from text prompts. Plus advanced features like character replacement, image-to-video conversion, virtual try-ons, and passport photo creation.",
     },
     {
-        title: "Is HeyOmi free to use?",
-        label: "HeyOmi offers a free tier with limited generations. Paid plans unlock more features and outputs.",
+        title: "Can I use HeyOmi content for commercial projects?",
+        label: "Yes. All content generated on HeyOmi can be used for both personal and commercial purposes without restrictions.",
     },
     {
-        title: "Can I use HeyOmi for commercial projects?",
-        label: "Yes — all generated content can be used for both personal and commercial purposes.",
+        title: "What if the AI output isn't what I envisioned?",
+        label: "Simply regenerate as many times as needed, or use HeyOmi's editing tools to refine and customize results directly.",
     },
     {
-        title: "How accurate are the outputs?",
-        label: "Results are context-aware and high quality, but we recommend reviewing and refining for best use.",
+        title: "Is HeyOmi free?",
+        label: "HeyOmi offers a free tier with limited generations. Paid plans unlock unlimited access, higher quality outputs, 4K video, and priority processing.",
     },
     {
-        title: "What if I don’t like the result?",
-        label: "You can regenerate as many times as needed, or edit outputs directly to suit your needs.",
+        title: "How good are the AI-generated outputs?",
+        label: "HeyOmi delivers professional-quality results with cinematic videos, stunning images, and clear audio. We recommend reviewing and fine-tuning outputs for best results.",
+    },
+    {
+        title: "Do I need technical skills or expensive software to use HeyOmi?",
+        label: "No. HeyOmi is designed for creators of all skill levels. Create professional content with just text prompts—no technical knowledge required.",
     },
 ];
 

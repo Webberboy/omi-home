@@ -40,8 +40,9 @@ export function FooterBody() {
                                 />
                             </svg>
                         </div>
+                        {/* Footer links commented out per request
                         <FooterInnerLink />
-                        <span className="br-line has-dot"></span>
+                        <span className="br-line has-dot"></span> */}
                         <div className="footer-inner_bottom">
                             <p className="text-caption font-2">© 2025 HEYOMI. ALL RIGHTS RESERVED.</p>
                             <a href="#" className="text-caption font-2 link">

@@ -14,8 +14,8 @@ export interface FeatureTab {
 
 export const FeatureTabItems: FeatureTab[] = [
     {
-        id: "imageCreator",
-        title: "Image Creator",
+        id: "textToVideo",
+        title: "Text to Video",
         img: "image-creator.webp",
         desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
         demoType: "image",
@@ -26,8 +26,8 @@ export const FeatureTabItems: FeatureTab[] = [
         ],
     },
     {
-        id: "imageEnhance",
-        title: "Image Enhance",
+        id: "imageToVideo",
+        title: "Image to Video",
         img: "image-enhance.webp",
         desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
         demoType: "image",
@@ -38,8 +38,8 @@ export const FeatureTabItems: FeatureTab[] = [
         ],
     },
     {
-        id: "videoCreator",
-        title: "Video Creator",
+        id: "referenceToVideo",
+        title: "Reference to Video",
         img: "video-creator.webp",
         desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
         demoType: "video",
@@ -50,20 +50,20 @@ export const FeatureTabItems: FeatureTab[] = [
         ],
     },
     {
-        id: "textCreator",
-        title: "Text Creator",
+        id: "characterReplace",
+        title: "Character Replace",
         img: "text-creator.webp",
         desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
     {
-        id: "codeComposer",
-        title: "Code Composer",
+        id: "textToImage",
+        title: "Text to Image",
         img: "code-composer.webp",
         desc: "Generate or refactor code in any language. From scripts to components — AI does the heavy lifting.",
     },
     {
-        id: "websiteBuilder",
-        title: "Website Builder",
+        id: "editImage",
+        title: "Edit Image",
         img: "website-builder.webp",
         desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
         demoType: "audio",
@@ -72,6 +72,18 @@ export const FeatureTabItems: FeatureTab[] = [
             { id: "aud-2", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
             { id: "aud-3", url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
         ],
+    },
+    {
+        id: "music",
+        title: "AI Music",
+        img: "image-creator.webp",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
+    },
+    {
+        id: "textToSpeech",
+        title: "Text to Speech",
+        img: "image-enhance.webp",
+        desc: "From visuals to code, HeyOmi gives you a full creative suite powered by the latest multi-model AI — all in one place.",
     },
 ];
 

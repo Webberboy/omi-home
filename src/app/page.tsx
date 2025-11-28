@@ -34,9 +34,12 @@ export default function Home() {
                 <FeatureSection />
                 {/* Benefit section commented out per request
                 <BenefitSection /> */}
-                <HowToUseSection />
-                <PricingSection />
-                <TestimonialSection />
+                {/* How To Use section commented out per request
+                <HowToUseSection /> */}
+                {/* Pricing section commented out per request
+                <PricingSection /> */}
+                {/* Testimonials section commented out per request
+                <TestimonialSection /> */}
                 <FaqSection />
                 <CtaSection />
                 <Footer />

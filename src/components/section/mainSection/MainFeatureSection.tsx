@@ -1,33 +1,76 @@
 "use client";
 import { FeatureTabItems } from "@/data/feature";
 import Image from "next/image";
-import { useState } from "react";
 
 export default function MainFeatureSection() {
-    const [activeTab, setActiveTab] = useState("imageCreator");
-    const [demoIndex, setDemoIndex] = useState(0);
+    // Create multiple rows of features for the animation
+    const featuresRow1 = FeatureTabItems;
+    const featuresRow2 = [...FeatureTabItems].reverse();
+    const featuresRow3 = FeatureTabItems;
 
-    const activeFeature = FeatureTabItems.find((f) => f.id === activeTab);
-    const demos = activeFeature?.demos || [];
+    const FeatureBox = ({ title }: { title: string }) => (
+        <div
+            style={{
+                padding: "1rem 1.5rem",
+                background: "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "12px",
+                minWidth: "180px",
+                textAlign: "center",
+                fontSize: "0.95rem",
+                fontWeight: "500",
+                whiteSpace: "nowrap",
+                flex: "0 0 auto",
+            }}
+        >
+            {title}
+        </div>
+    );
 
-    const goToPrevDemo = () => {
-        setDemoIndex((prev) => (prev === 0 ? demos.length - 1 : prev - 1));
-    };
-
-    const goToNextDemo = () => {
-        setDemoIndex((prev) => (prev === demos.length - 1 ? 0 : prev + 1));
-    };
-
-    const handleTabChange = (tabId: string) => {
-        setActiveTab(tabId);
-        setDemoIndex(0);
-    };
-
-    const currentDemo = demos[demoIndex];
+    const FeatureRow = ({ features, direction = "left" }: { features: typeof FeatureTabItems; direction?: "left" | "right" }) => (
+        <div
+            style={{
+                display: "flex",
+                gap: "1rem",
+                overflow: "hidden",
+                maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            }}
+        >
+            <style>{`
+                @keyframes scroll-left {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
+                }
+                @keyframes scroll-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
+                .feature-scroll-left {
+                    animation: scroll-left 30s linear infinite;
+                }
+                .feature-scroll-right {
+                    animation: scroll-right 30s linear infinite;
+                }
+            `}</style>
+            <div
+                className={direction === "left" ? "feature-scroll-left" : "feature-scroll-right"}
+                style={{
+                    display: "flex",
+                    gap: "1rem",
+                }}
+            >
+                {/* Duplicate features for seamless loop */}
+                {[...features, ...features].map((feature, idx) => (
+                    <FeatureBox key={`${feature.id}-${idx}`} title={feature.title} />
+                ))}
+            </div>
+        </div>
+    );
 
     return (
         <>
-            <div className="sect-main flat-animate-tab">
+            <div className="sect-main">
                 <div className="s-img_item wow bounceInScale">
                     <Image src="/assets/images/section/smoke-blue.webp" alt="Item" width={1296} height={606} />
                 </div>
@@ -40,95 +83,11 @@ export default function MainFeatureSection() {
                         </p>
                     </div>
 
-                    {/* Demo Display */}
-                    {currentDemo && (
-                        <div className="demo-display" style={{ marginTop: "2rem", textAlign: "center" }}>
-                            {activeFeature?.demoType === "image" && (
-                                <img
-                                    src={currentDemo.url}
-                                    alt="Demo"
-                                    style={{
-                                        maxWidth: "100%",
-                                        height: "auto",
-                                        borderRadius: "12px",
-                                        marginBottom: "1rem",
-                                    }}
-                                />
-                            )}
-
-                            {activeFeature?.demoType === "video" && (
-                                <video
-                                    controls
-                                    style={{
-                                        maxWidth: "100%",
-                                        height: "auto",
-                                        borderRadius: "12px",
-                                        marginBottom: "1rem",
-                                    }}
-                                >
-                                    <source src={currentDemo.url} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            )}
-
-                            {activeFeature?.demoType === "audio" && (
-                                <audio
-                                    controls
-                                    style={{
-                                        width: "100%",
-                                        marginBottom: "1rem",
-                                    }}
-                                >
-                                    <source src={currentDemo.url} type="audio/mpeg" />
-                                    Your browser does not support the audio tag.
-                                </audio>
-                            )}
-
-                            {/* Carousel Controls */}
-                            {demos.length > 0 && (
-                                <div style={{ display: "flex", justifyContent: "center", gap: "1rem", alignItems: "center" }}>
-                                    <button
-                                        onClick={goToPrevDemo}
-                                        className="tf-btn style-transparent"
-                                        style={{ padding: "0.5rem 1rem" }}
-                                    >
-                                        ← Prev
-                                    </button>
-                                    <span style={{ color: "#999" }}>
-                                        {demoIndex + 1} / {demos.length}
-                                    </span>
-                                    <button
-                                        onClick={goToNextDemo}
-                                        className="tf-btn style-transparent"
-                                        style={{ padding: "0.5rem 1rem" }}
-                                    >
-                                        Next →
-                                    </button>
-                                </div>
-                            )}
-                        </div>
-                    )}
-                </div>
-                <span className="br-line"></span>
-                <div className="container">
-                    <div className="position-relative">
-                        <ul className="tab-can_do position-relative mx-1" role="tablist">
-                            {FeatureTabItems.map((item) => (
-                                <li key={item.id} className={`nav-tab-item ${activeTab === item.id ? "active" : ""}`} role="presentation">
-                                    <button
-                                        onClick={() => handleTabChange(item.id)}
-                                        className={`btn_tab tf-btn style-transparent text-body-3 animate-btn ${
-                                            activeTab === item.id ? "active" : ""
-                                        }`}
-                                        role="tab"
-                                    >
-                                        {item.title}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                        <span className="hafl-plus pst-left_bot item_bot wow bounceInScale"></span>
-                        <span className="hafl-plus pst-right_bot item_bot wow bounceInScale"></span>
+                    {/* Animated Feature Boxes */}
+                    <div style={{ marginTop: "1rem", display: "flex", flexDirection: "column", gap: "2rem" }}>
+                        <FeatureRow features={featuresRow1} direction="left" />
+                        <FeatureRow features={featuresRow2} direction="right" />
+                        <FeatureRow features={featuresRow3} direction="left" />
                     </div>
                 </div>
             </div>

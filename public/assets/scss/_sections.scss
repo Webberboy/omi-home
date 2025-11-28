@@ -284,6 +284,14 @@
     }
 }
 
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1296px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .hero-video {
     max-width: 1296px;
     margin-left: auto;
@@ -325,57 +333,57 @@
         z-index: 0;
         pointer-events: none;
     }
+}
+
+/* Custom play button styling - moved outside hero-video */
+.video-play-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
     
-    /* Custom play button styling */
-    .video-play-button {
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.7);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 100;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        
-        /* Mobile optimizations */
-        @media (hover: none) and (pointer: coarse) {
-            /* Touch device optimizations */
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            
-            .play-icon {
-                font-size: 20px;
-            }
-        }
-        
-        &:hover {
-            background: rgba(0, 0, 0, 0.9);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.1);
-        }
-        
-        &:active {
-            transform: scale(0.95);
-        }
+    /* Mobile optimizations */
+    @media (hover: none) and (pointer: coarse) {
+        /* Touch device optimizations */
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
         
         .play-icon {
-            font-size: 18px;
-            font-weight: bold;
-            transition: all 0.2s ease;
-            
-            &.playing {
-                font-size: 16px;
-            }
+            font-size: 20px;
+        }
+    }
+    
+    &:hover {
+        background: rgba(0, 0, 0, 0.9);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.1);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    .play-icon {
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.2s ease;
+        
+        &.playing {
+            font-size: 16px;
         }
     }
 }

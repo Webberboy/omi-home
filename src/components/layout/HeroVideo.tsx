@@ -18,14 +18,14 @@ export default function HeroVideo() {
     };
 
     return (
-        <div className="hero-video">
-            {hasError ? (
-                <div className="video-fallback">
-                    <div className="fallback-gradient"></div>
-                    <p>Video could not be loaded.</p>
-                </div>
-            ) : (
-                <>
+        <div className="hero-video-wrapper">
+            <div className="hero-video">
+                {hasError ? (
+                    <div className="video-fallback">
+                        <div className="fallback-gradient"></div>
+                        <p>Video could not be loaded.</p>
+                    </div>
+                ) : (
                     <video 
                         ref={videoRef}
                         muted 
@@ -43,21 +43,23 @@ export default function HeroVideo() {
                         <source src="/assets/images/video/BlackHole.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
-                    
-                    {/* Custom play button that's always accessible */}
-                    <button 
-                        className="video-play-button"
-                        onClick={togglePlay}
-                        aria-label={isPlaying ? "Pause video" : "Play video"}
-                    >
-                        <span className={`play-icon ${isPlaying ? 'playing' : 'paused'}`}>
-                            {isPlaying ? '❚❚' : '▶'}
-                        </span>
-                    </button>
-                </>
-            )}
+                )}
 
-            <div className="orther-overlay"></div>
+                <div className="orther-overlay"></div>
+            </div>
+            
+            {/* Custom play button that's always accessible - moved outside hero-video */}
+            {!hasError && (
+                <button 
+                    className="video-play-button"
+                    onClick={togglePlay}
+                    aria-label={isPlaying ? "Pause video" : "Play video"}
+                >
+                    <span className={`play-icon ${isPlaying ? 'playing' : 'paused'}`}>
+                        {isPlaying ? '❚❚' : '▶'}
+                    </span>
+                </button>
+            )}
         </div>
     );
 }

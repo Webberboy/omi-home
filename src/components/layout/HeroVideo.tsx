@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function HeroVideo() {
     const [hasError, setHasError] = useState(false);

@@ -256,6 +256,45 @@
     pointer-events: none;
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 425px;
+}
+
+.video-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    z-index: 2;
+    
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid #5997FF;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 16px;
+    }
+    
+    p {
+        color: var(--text-2);
+        font-size: 14px;
+        opacity: 0.8;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .video-fallback {
     position: relative;
     width: 100%;

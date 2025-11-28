@@ -1,7 +1,6 @@
 "use client";
 import { assitantsAiItems } from "@/data/assitantsAi";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export function MainHeroSection() {
     const [index, setIndex] = useState(0);
@@ -25,11 +24,9 @@ export function MainHeroSection() {
                                     <div key={idx} className={`text-change_rotating  ${idx === index ? "active" : ""}`}>
                                         Built on
                                         {item.logo ? (
-                                            <Image 
+                                            <img 
                                                 src={item.logo} 
                                                 alt={item.name}
-                                                width={20}
-                                                height={20}
                                                 style={{ height: "0.9em", width: "auto", margin: "0 0.15em 0 0.1em", verticalAlign: "-0.1em", display: "inline-block" }}
                                             />
                                         ) : (

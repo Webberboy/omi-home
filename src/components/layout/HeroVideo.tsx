@@ -4,17 +4,38 @@ import { useState, useRef } from "react";
 export default function HeroVideo() {
     const [hasError, setHasError] = useState(false);
     const [isPlaying, setIsPlaying] = useState(true);
+    const [debugInfo, setDebugInfo] = useState("Debug ready - tap button");
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const togglePlay = () => {
-        if (videoRef.current) {
+        // Debug logging
+        const timestamp = new Date().toLocaleTimeString();
+        let debugMsg = `Tapped at ${timestamp}\n`;
+        
+        if (!videoRef.current) {
+            debugMsg += "ERROR: videoRef.current is null!";
+            setDebugInfo(debugMsg);
+            return;
+        }
+        
+        debugMsg += `Video element found\n`;
+        debugMsg += `Current state: ${isPlaying ? 'playing' : 'paused'}\n`;
+        
+        try {
             if (isPlaying) {
                 videoRef.current.pause();
+                debugMsg += "Called pause()\n";
             } else {
                 videoRef.current.play();
+                debugMsg += "Called play()\n";
             }
             setIsPlaying(!isPlaying);
+            debugMsg += `New state: ${!isPlaying ? 'playing' : 'paused'}`;
+        } catch (error) {
+            debugMsg += `ERROR: ${error.message}`;
         }
+        
+        setDebugInfo(debugMsg);
     };
 
     return (
@@ -34,11 +55,31 @@ export default function HeroVideo() {
                         playsInline 
                         controls
                         preload="metadata"
-                        onError={() => setHasError(true)}
-                        onLoadStart={() => console.log('Video loading started')}
-                        onLoadedData={() => console.log('Video data loaded')}
-                        onPlay={() => setIsPlaying(true)}
-                        onPause={() => setIsPlaying(false)}
+                        onError={() => {
+                            setHasError(true);
+                            setDebugInfo(prev => prev + `\nERROR: Video failed to load!`);
+                        }}
+                        onLoadStart={() => {
+                            console.log('Video loading started');
+                            setDebugInfo(prev => prev + `\nVideo loading started`);
+                        }}
+                        onLoadedData={() => {
+                            console.log('Video data loaded');
+                            setDebugInfo(prev => prev + `\nVideo data loaded successfully`);
+                        }}
+                        onPlay={() => {
+                            setIsPlaying(true);
+                            setDebugInfo(prev => prev + `\nVideo started playing`);
+                        }}
+                        onPause={() => {
+                            setIsPlaying(false);
+                            setDebugInfo(prev => prev + `\nVideo paused`);
+                        }}
+                        onLoadedMetadata={() => {
+                            if (videoRef.current) {
+                                setDebugInfo(prev => prev + `\nVideo metadata loaded - duration: ${Math.round(videoRef.current.duration)}s`);
+                            }
+                        }}
                     >
                         <source src="/assets/images/video/BlackHole.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
@@ -60,6 +101,20 @@ export default function HeroVideo() {
                     </span>
                 </button>
             )}
+
+            {/* Debug box for mobile testing */}
+            <div className="video-debug-box">
+                <div className="debug-header">
+                    <span>DEBUG INFO</span>
+                    <button 
+                        className="debug-clear"
+                        onClick={() => setDebugInfo("Debug cleared - tap button again")}
+                    >
+                        Clear
+                    </button>
+                </div>
+                <pre>{debugInfo}</pre>
+            </div>
         </div>
     );
 }

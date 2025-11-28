@@ -388,6 +388,60 @@
     }
 }
 
+/* Debug box for mobile testing */
+.video-debug-box {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #00ff00;
+    
+    .debug-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #00ff00;
+        font-weight: bold;
+        font-size: 11px;
+    }
+    
+    .debug-clear {
+        background: rgba(255, 0, 0, 0.3);
+        color: #ff0000;
+        border: 1px solid #ff0000;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 10px;
+        cursor: pointer;
+        
+        &:hover {
+            background: rgba(255, 0, 0, 0.5);
+        }
+        
+        &:active {
+            background: rgba(255, 0, 0, 0.7);
+        }
+    }
+    
+    pre {
+        margin: 0;
+        white-space: pre-wrap;
+        word-break: break-all;
+    }
+}
+
 .sect-header {
     padding-top: 16px;
     padding-bottom: 16px;

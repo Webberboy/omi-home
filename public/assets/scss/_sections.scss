@@ -272,8 +272,84 @@
 
     video {
         min-height: 425px;
+        transition: opacity 0.3s ease-in-out;
+        
+        &.video-hidden {
+            opacity: 0;
+        }
     }
 
+    // Video loading state
+    .video-loading {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        z-index: 10;
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            color: var(--white);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    }
+
+    // Video fallback for errors or iOS compatibility
+    .video-fallback {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+        z-index: 10;
+        
+        .fallback-content {
+            text-align: center;
+            padding: 20px;
+            
+            .fallback-icon {
+                font-size: 48px;
+                margin-bottom: 16px;
+                opacity: 0.8;
+                animation: pulse 2s ease-in-out infinite;
+            }
+            
+            h3 {
+                color: var(--white);
+                font-size: 18px;
+                margin-bottom: 8px;
+                font-weight: 500;
+            }
+            
+            p {
+                color: var(--text-2);
+                font-size: 14px;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    // Gradient overlays
     &::after {
         position: absolute;
         content: "";
@@ -297,6 +373,54 @@
         z-index: 0;
         pointer-events: none;
     }
+
+    // iOS-specific optimizations
+    @supports (-webkit-touch-callout: none) {
+        video {
+            -webkit-transform: translateZ(0); // Force hardware acceleration
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+    }
+
+    // Additional iPhone video fixes
+    video {
+        -webkit-touch-callout: none; // Prevent iOS video download prompt
+        -webkit-user-select: none;
+        user-select: none;
+        pointer-events: none; // Prevent iOS video controls from appearing
+    }
+
+    // Mobile optimizations
+    @media (max-width: 768px) {
+        video {
+            min-height: 300px;
+            object-fit: cover;
+        }
+        
+        .video-loading .loading-spinner {
+            width: 30px;
+            height: 30px;
+        }
+        
+        .video-fallback .fallback-content .fallback-icon {
+            font-size: 36px;
+        }
+    }
+}
+
+// Animation keyframes
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
 }
 
 .sect-header {

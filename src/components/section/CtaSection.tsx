@@ -4,7 +4,7 @@ import { SectHeader } from "@components/section/SectHeader";
 import { SectTagline } from "@components/section/SectTagline";
 import { SectBottom } from "@components/section/SectBottom";
 import Image from "next/image";
-import { supabase } from "@/lib/supabase";
+
 
 export default function CtaSection() {
     return (
@@ -79,53 +79,52 @@ export function FormGet() {
         console.log('✅ Email validation passed:', email);
         
         try {
-            console.log('🔧 Generating Supabase ID...');
-            // Generate Supabase ID
-            const supabaseId = crypto.randomUUID();
-            console.log('🆔 Generated Supabase ID:', supabaseId);
+            console.log('🚀 Calling API endpoint to save email...');
             
             // Get client info
             const userAgent = navigator.userAgent;
-            const timestamp = new Date().toISOString();
-            console.log('📱 Client info collected:', { userAgent, timestamp });
+            console.log('📱 Client info collected:', { userAgent });
             
-            console.log('🚀 Attempting Supabase insertion...');
-            // Insert directly into Supabase
-            const { error } = await supabase
-                .from('emails')
-                .insert([
-                    {
-                        email: email.toLowerCase(),
-                        supabase_id: supabaseId,
-                        source: 'newsletter',
-                        user_agent: userAgent,
-                        metadata: {
-                            timestamp: timestamp,
-                            userAgent: userAgent
-                        },
-                        created_at: timestamp,
-                        updated_at: timestamp
-                    }
-                ]);
+            console.log('📡 Sending POST request to /api/subscribe...');
+            
+            // Call API endpoint
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    userAgent: userAgent,
+                    source: 'newsletter'
+                }),
+            });
 
-            console.log('📊 Supabase response received:', { error });
+            console.log('📊 API response received:', { 
+                status: response.status, 
+                statusText: response.statusText 
+            });
 
-            if (error) {
-                console.log('❌ Supabase error occurred:', error);
+            const data = await response.json();
+            console.log('📋 Response data:', data);
+
+            if (!response.ok) {
+                console.log('❌ API error occurred:', data.error);
+                
                 // Handle duplicate email
-                if (error.code === '23505') {
+                if (response.status === 409) {
                     console.log('🔄 Duplicate email detected');
                     setError('This email is already subscribed');
                 } else {
-                    console.error('Supabase error:', error);
-                    setError('Failed to subscribe. Please try again.');
+                    setError(data.error || 'Failed to subscribe. Please try again.');
                 }
             } else {
-                console.log('✅ Email successfully submitted to Supabase!');
+                console.log('✅ Email successfully saved to CSV file via API!');
                 setIsSubmitted(true);
             }
-        } catch (error) {
-            console.error('💥 Email submission error:', error);
+            
+        } catch (error: any) {
+            console.error('💥 API call error:', error);
             setError('Failed to subscribe. Please try again.');
         } finally {
             console.log('🏁 Email submission process completed');

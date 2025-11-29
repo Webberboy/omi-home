@@ -3,8 +3,8 @@ import { useState, useRef } from "react";
 
 export default function HeroVideo() {
     const [hasError, setHasError] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(true);
-    const [debugInfo, setDebugInfo] = useState("Debug ready - tap button");
+    const [isPlaying, setIsPlaying] = useState(false); // Start as paused
+    const [debugInfo, setDebugInfo] = useState("Video ready - tap custom button to play");
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const togglePlay = () => {
@@ -50,7 +50,6 @@ export default function HeroVideo() {
                     <video 
                         ref={videoRef}
                         muted 
-                        autoPlay 
                         loop 
                         playsInline 
                         preload="metadata"

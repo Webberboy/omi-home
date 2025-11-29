@@ -53,7 +53,6 @@ export default function HeroVideo() {
                         autoPlay 
                         loop 
                         playsInline 
-                        controls
                         preload="metadata"
                         onError={() => {
                             setHasError(true);

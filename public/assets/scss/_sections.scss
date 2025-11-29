@@ -308,25 +308,6 @@
 
     video {
         min-height: 425px;
-        /* Completely hide native iPhone controls */
-        -webkit-appearance: none;
-        -webkit-media-controls: none !important;
-        -webkit-media-controls-panel: none !important;
-        -webkit-media-controls-overlay-enclosure: none !important;
-        -webkit-media-controls-enclosure: none !important;
-        -webkit-media-controls-panel: none !important;
-        -webkit-media-controls-play-button: none !important;
-        -webkit-media-controls-volume-slider: none !important;
-        -webkit-media-controls-mute-button: none !important;
-        -webkit-media-controls-timeline: none !important;
-        -webkit-media-controls-current-time-display: none !important;
-        -webkit-media-controls-time-remaining-display: none !important;
-        -webkit-media-controls-fullscreen-button: none !important;
-        -webkit-media-controls-fullscreen-button: none !important;
-        pointer-events: none !important;
-        user-select: none !important;
-        -webkit-user-select: none !important;
-        -webkit-touch-callout: none !important;
     }
 
     &::after {
@@ -359,61 +340,50 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.8);
-    border: 3px solid rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 100;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    
-    /* Ensure it's always clickable */
-    pointer-events: auto !important;
-    user-select: none !important;
-    -webkit-user-select: none !important;
-    -webkit-touch-callout: none !important;
-    -webkit-tap-highlight-color: transparent !important;
     
     /* Mobile optimizations */
     @media (hover: none) and (pointer: coarse) {
         /* Touch device optimizations */
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         bottom: 20px;
         right: 20px;
-        border-width: 4px;
         
         .play-icon {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
     
     &:hover {
         background: rgba(0, 0, 0, 0.9);
-        border-color: rgba(255, 255, 255, 0.8);
+        border-color: rgba(255, 255, 255, 0.5);
         transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
     }
     
     &:active {
         transform: scale(0.95);
-        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     }
     
     .play-icon {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
         transition: all 0.2s ease;
         
         &.playing {
-            font-size: 18px;
+            font-size: 16px;
         }
     }
 }

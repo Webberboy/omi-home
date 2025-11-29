@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
     transition: opacity 0.8s ease-out;
+    pointer-events: none; /* Allow clicks to pass through to background content */
 }
 
 .loadingScreen.fadeOut {
@@ -19,6 +20,7 @@
 
 .loadingContent {
     text-align: center;
+    pointer-events: auto; /* Enable pointer events only for the content */
 }
 
 .typewriterContainer {

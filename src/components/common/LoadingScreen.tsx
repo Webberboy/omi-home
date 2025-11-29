@@ -34,6 +34,10 @@ export default function LoadingScreen() {
             const loadingElement = document.getElementById('loading-screen');
             if (loadingElement) {
                 loadingElement.style.display = 'none';
+                // Remove the loading screen completely after fade out
+                loadingElement.remove();
+                // Add a class to body to indicate loading is complete
+                document.body.classList.add('loading-complete');
             }
         }
     };

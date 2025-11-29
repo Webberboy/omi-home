@@ -20,7 +20,11 @@ export default function AdminEmailsPage() {
 
   const fetchEmails = async () => {
     try {
-      const response = await fetch('/api/subscribe');
+      // Get the base URL - use relative path for same origin, or construct full URL
+      const baseUrl = typeof window !== 'undefined' ? `${window.location.origin}` : '';
+      const apiUrl = `${baseUrl}/api/subscribe`;
+      
+      const response = await fetch(apiUrl);
       const data = await response.json();
       
       if (response.ok) {

@@ -87,8 +87,14 @@ export function FormGet() {
             
             console.log('📡 Sending POST request to /api/subscribe...');
             
+            // Get the base URL - use relative path for same origin, or construct full URL
+            const baseUrl = typeof window !== 'undefined' ? `${window.location.origin}` : '';
+            const apiUrl = `${baseUrl}/api/subscribe`;
+            
+            console.log('🔗 API URL:', apiUrl);
+            
             // Call API endpoint
-            const response = await fetch('/api/subscribe', {
+            const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

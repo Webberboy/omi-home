@@ -32,7 +32,7 @@ export default function HeroVideo() {
             setIsPlaying(!isPlaying);
             debugMsg += `New state: ${!isPlaying ? 'playing' : 'paused'}`;
         } catch (error) {
-            debugMsg += `ERROR: ${error.message}`;
+            debugMsg += `ERROR: ${error instanceof Error ? error.message : String(error)}`;
         }
         
         setDebugInfo(debugMsg);
@@ -75,8 +75,9 @@ export default function HeroVideo() {
                             setDebugInfo(prev => prev + `\nVideo paused`);
                         }}
                         onLoadedMetadata={() => {
-                            if (videoRef.current) {
-                                setDebugInfo(prev => prev + `\nVideo metadata loaded - duration: ${Math.round(videoRef.current.duration)}s`);
+                            const video = videoRef.current;
+                            if (video) {
+                                setDebugInfo(prev => prev + `\nVideo metadata loaded - duration: ${Math.round(video.duration)}s`);
                             }
                         }}
                     >

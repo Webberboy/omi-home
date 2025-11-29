@@ -4,6 +4,7 @@ import { SectHeader } from "@components/section/SectHeader";
 import { SectTagline } from "@components/section/SectTagline";
 import { SectBottom } from "@components/section/SectBottom";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
 
 export default function CtaSection() {
     return (
@@ -54,16 +55,67 @@ export function MainCtaSection() {
 export function FormGet() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     async function handleSubmit(formData: FormData) {
         setIsLoading(true);
+        setError(null);
         
-        // Simulate form submission delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const email = formData.get('email') as string;
         
-        // Simulate successful submission
-        setIsSubmitted(true);
-        setIsLoading(false);
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email || !emailRegex.test(email)) {
+            setError('Please provide a valid email address');
+            setIsLoading(false);
+            return;
+        }
+        
+        try {
+            // Generate Supabase ID
+            const supabaseId = crypto.randomUUID();
+            
+            // Get client info
+            const userAgent = navigator.userAgent;
+            const timestamp = new Date().toISOString();
+            
+            // Insert directly into Supabase
+            const { data, error } = await supabase
+                .from('emails')
+                .insert([
+                    {
+                        email: email.toLowerCase(),
+                        supabase_id: supabaseId,
+                        source: 'newsletter',
+                        user_agent: userAgent,
+                        metadata: {
+                            timestamp: timestamp,
+                            userAgent: userAgent
+                        },
+                        created_at: timestamp,
+                        updated_at: timestamp
+                    }
+                ])
+                .select()
+                .single() as any;
+
+            if (error) {
+                // Handle duplicate email
+                if (error.code === '23505') {
+                    setError('This email is already subscribed');
+                } else {
+                    console.error('Supabase error:', error);
+                    setError('Failed to subscribe. Please try again.');
+                }
+            } else {
+                setIsSubmitted(true);
+            }
+        } catch (error) {
+            console.error('Email submission error:', error);
+            setError('Failed to subscribe. Please try again.');
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     if (isSubmitted) {
@@ -95,6 +147,11 @@ export function FormGet() {
                     <span>{isLoading ? 'Submitting...' : 'Submit'}</span>
                 </button>
             </div>
+            {error && (
+                <div className="error-message" style={{color: '#ff4444', marginTop: '10px', fontSize: '14px'}}>
+                    {error}
+                </div>
+            )}
         </form>
     );
 }

@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qore - AI Video Generation Platform
+
+A modern, responsive Next.js application for AI-powered video generation services. Built with TypeScript, Tailwind CSS, and featuring a clean, professional design optimized for both desktop and mobile devices.
+
+## Features
+
+- **AI Video Generation**: Advanced video creation capabilities powered by AI
+- **Responsive Design**: Optimized for all devices with mobile-first approach
+- **Modern UI/UX**: Clean, professional interface with smooth animations
+- **Performance**: Fast loading times and optimized user experience
+- **SEO Ready**: Built with Next.js for optimal search engine performance
 
 ## Getting Started
 

@@ -49,7 +49,6 @@ export default function HeroVideo() {
                         loop 
                         playsInline 
                         preload="auto"
-                        fetchPriority="high"
                         onError={() => {
                             setHasError(true);
                             console.log('Video failed to load');

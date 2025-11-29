@@ -16,10 +16,10 @@ export default function LoadingScreen() {
                 currentIndex++;
             } else {
                 clearInterval(typeInterval);
-                // Wait 1 second after typing completes, then fade out
+                // Wait 4 seconds after typing completes, then fade out (total 8 seconds)
                 setTimeout(() => {
                     setIsVisible(false);
-                }, 1000);
+                }, 4000);
             }
         }, 150); // Typing speed - 150ms per character
 

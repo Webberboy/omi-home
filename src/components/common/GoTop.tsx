@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const GoTopButton = () => {
     const [showButton, setShowButton] = useState(false);
@@ -30,12 +30,12 @@ const GoTopButton = () => {
         ticking.current = false;
     };
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         if (!ticking.current) {
             requestAnimationFrame(updateScroll);
             ticking.current = true;
         }
-    };
+    }, []);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });

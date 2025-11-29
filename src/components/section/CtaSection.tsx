@@ -80,7 +80,7 @@ export function FormGet() {
             const timestamp = new Date().toISOString();
             
             // Insert directly into Supabase
-            const { data, error } = await supabase
+            const { error } = await supabase
                 .from('emails')
                 .insert([
                     {
@@ -95,9 +95,7 @@ export function FormGet() {
                         created_at: timestamp,
                         updated_at: timestamp
                     }
-                ])
-                .select()
-                .single() as any;
+                ]);
 
             if (error) {
                 // Handle duplicate email

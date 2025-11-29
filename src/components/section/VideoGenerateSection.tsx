@@ -369,6 +369,10 @@ const ControlPanel: React.FC<ControlPanelProps> = ({
     );
 };
 
+// UNUSED COMPONENTS - COMMENTED OUT TO FIX COMPILATION
+// These components are defined but not used in the main VideoGenerateSection
+
+/*
 interface VideoPromptFormProps {
     prompt: string;
     setPrompt: (prompt: string) => void;
@@ -439,7 +443,9 @@ const VideoPromptForm: React.FC<VideoPromptFormProps> = ({
         </div>
     );
 };
+*/
 
+/*
 const VideoOptionsPanel: React.FC = () => {
     const [selectedDuration, setSelectedDuration] = useState("5s");
     const [selectedRatio, setSelectedRatio] = useState("16:9");
@@ -503,7 +509,9 @@ const VideoOptionsPanel: React.FC = () => {
         </div>
     );
 };
+*/
 
+/*
 interface VideoOutputAreaProps {
     generatedVideo: string | null;
     isGenerating: boolean;
@@ -567,7 +575,7 @@ const VideoOutputArea: React.FC<VideoOutputAreaProps> = ({
                         </div>
                         <h5 className="empty-title text-main-2">Ready to Create</h5>
                         <p className="text-body-3 text-main">
-                            Enter a prompt above to generate your AI video
+                            Enter a prompt to generate your first AI video
                         </p>
                     </div>
                 )}
@@ -575,3 +583,4 @@ const VideoOutputArea: React.FC<VideoOutputAreaProps> = ({
         </div>
     );
 };
+*/

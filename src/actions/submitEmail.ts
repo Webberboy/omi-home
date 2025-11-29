@@ -16,7 +16,7 @@ export interface EmailSubmissionResult {
 export async function submitEmail(
   email: string, 
   source: string = 'newsletter',
-  metadata: Record<string, any> = {}
+  metadata: Record<string, unknown> = {}
 ): Promise<EmailSubmissionResult> {
   console.warn('submitEmail function is deprecated. Using direct Supabase client integration instead.')
   

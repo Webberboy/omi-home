@@ -123,7 +123,7 @@ export function FormGet() {
                 setIsSubmitted(true);
             }
             
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.error('💥 API call error:', error);
             setError('Failed to subscribe. Please try again.');
         } finally {

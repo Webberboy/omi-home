@@ -48,7 +48,7 @@ const GoTopButton = () => {
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [handleScroll]);
 
     useEffect(() => {
         if (borderProgressRef.current) {

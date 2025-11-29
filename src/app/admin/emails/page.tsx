@@ -29,6 +29,7 @@ export default function AdminEmailsPage() {
         setError(data.error || 'Failed to fetch emails');
       }
     } catch (error) {
+      console.error('Failed to fetch emails:', error);
       setError('Failed to fetch emails');
     } finally {
       setLoading(false);

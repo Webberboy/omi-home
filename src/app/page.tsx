@@ -11,10 +11,12 @@ import CtaSection from "@components/section/CtaSection";
 // import Footer from "@components/footer/Footer";
 import GoTopButton from "@components/common/GoTop";
 import HackerTextEffect from "@/components/common/HackerTextEffect";
+import LoadingScreen from "@/components/common/LoadingScreen";
 
 export default function Home() {
     return (
         <>
+            <LoadingScreen />
             <div id="wrapper">
                 <HackerTextEffect />
                 <GoTopButton />

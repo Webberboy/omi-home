@@ -3,8 +3,8 @@ import { useState, useRef } from "react";
 
 export default function HeroVideo() {
     const [hasError, setHasError] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false); // Start as paused
-    const [debugInfo, setDebugInfo] = useState("Video ready - tap custom button to play");
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [debugInfo, setDebugInfo] = useState("Debug ready - tap button to play");
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const togglePlay = () => {
@@ -53,6 +53,12 @@ export default function HeroVideo() {
                         loop 
                         playsInline 
                         preload="metadata"
+                        style={{
+                            pointerEvents: 'none',
+                            userSelect: 'none',
+                            WebkitUserSelect: 'none',
+                            WebkitTouchCallout: 'none'
+                        }}
                         onError={() => {
                             setHasError(true);
                             setDebugInfo(prev => prev + `\nERROR: Video failed to load!`);

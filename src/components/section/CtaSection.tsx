@@ -58,27 +58,38 @@ export function FormGet() {
     const [error, setError] = useState<string | null>(null);
 
     async function handleSubmit(formData: FormData) {
+        console.log('🚀 Email submission started');
+        console.log('📋 FormData received:', formData);
+        
         setIsLoading(true);
         setError(null);
         
         const email = formData.get('email') as string;
+        console.log('📧 Email extracted from form:', email);
         
         // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!email || !emailRegex.test(email)) {
+            console.log('❌ Email validation failed:', email);
             setError('Please provide a valid email address');
             setIsLoading(false);
             return;
         }
         
+        console.log('✅ Email validation passed:', email);
+        
         try {
+            console.log('🔧 Generating Supabase ID...');
             // Generate Supabase ID
             const supabaseId = crypto.randomUUID();
+            console.log('🆔 Generated Supabase ID:', supabaseId);
             
             // Get client info
             const userAgent = navigator.userAgent;
             const timestamp = new Date().toISOString();
+            console.log('📱 Client info collected:', { userAgent, timestamp });
             
+            console.log('🚀 Attempting Supabase insertion...');
             // Insert directly into Supabase
             const { error } = await supabase
                 .from('emails')
@@ -97,21 +108,27 @@ export function FormGet() {
                     }
                 ]);
 
+            console.log('📊 Supabase response received:', { error });
+
             if (error) {
+                console.log('❌ Supabase error occurred:', error);
                 // Handle duplicate email
                 if (error.code === '23505') {
+                    console.log('🔄 Duplicate email detected');
                     setError('This email is already subscribed');
                 } else {
                     console.error('Supabase error:', error);
                     setError('Failed to subscribe. Please try again.');
                 }
             } else {
+                console.log('✅ Email successfully submitted to Supabase!');
                 setIsSubmitted(true);
             }
         } catch (error) {
-            console.error('Email submission error:', error);
+            console.error('💥 Email submission error:', error);
             setError('Failed to subscribe. Please try again.');
         } finally {
+            console.log('🏁 Email submission process completed');
             setIsLoading(false);
         }
     }
@@ -129,7 +146,10 @@ export function FormGet() {
     }
 
     return (
-        <form className="form-get" action={handleSubmit}>
+        <form className="form-get" action={handleSubmit} onSubmit={(e) => {
+            console.log('📝 Form submit event triggered');
+            console.log('🎯 Form element:', e.target);
+        }}>
             <div className="form-content">
                 <fieldset>
                     <input 
@@ -139,9 +159,15 @@ export function FormGet() {
                         required 
                         style={{fontSize: '16px'}} 
                         disabled={isLoading}
+                        onChange={(e) => console.log('⌨️ Email input changed:', e.target.value)}
                     />
                 </fieldset>
-                <button className="tf-btn style-2 style-high animate-btn" type="submit" disabled={isLoading}>
+                <button 
+                    className="tf-btn style-2 style-high animate-btn" 
+                    type="submit" 
+                    disabled={isLoading}
+                    onClick={() => console.log('🖱️ Submit button clicked!')}
+                >
                     <span>{isLoading ? 'Submitting...' : 'Submit'}</span>
                 </button>
             </div>

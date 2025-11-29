@@ -1,20 +1,10 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 export default function HeroVideo() {
     const [hasError, setHasError] = useState(false);
     const [isPlaying, setIsPlaying] = useState(true);
     const videoRef = useRef<HTMLVideoElement>(null);
-
-    useEffect(() => {
-        // Force video to start loading immediately when component mounts
-        const video = videoRef.current;
-        if (video) {
-            console.log('Forcing video to load...');
-            // This triggers the browser to start loading the video
-            video.load();
-        }
-    }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) {
@@ -48,7 +38,7 @@ export default function HeroVideo() {
                         autoPlay 
                         loop 
                         playsInline 
-                        preload="auto"
+                        preload="metadata"
                         onError={() => {
                             setHasError(true);
                             console.log('Video failed to load');

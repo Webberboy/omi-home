@@ -79,6 +79,9 @@ function parseCSVLine(line: string): string[] {
 }
 
 function escapeCSV(value: string): string {
+  // Handle undefined/null values
+  if (!value) return '';
+  
   // Escape quotes and wrap in quotes if contains comma or quotes
   if (value.includes(',') || value.includes('"') || value.includes('\n')) {
     return value.replace(/"/g, '""');

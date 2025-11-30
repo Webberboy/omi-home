@@ -5,6 +5,8 @@ A modern, responsive Next.js application for AI-powered video generation service
 ## Features
 
 - **AI Video Generation**: Advanced video creation capabilities powered by AI
+- **Email Subscriptions**: Collect and manage email subscriptions with Supabase integration
+- **Admin Dashboard**: View and manage email subscriptions in the admin panel
 - **Responsive Design**: Optimized for all devices with mobile-first approach
 - **Modern UI/UX**: Clean, professional interface with smooth animations
 - **Performance**: Fast loading times and optimized user experience
@@ -25,6 +27,24 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Environment Setup
+
+Create a `.env.local` file in the root directory with the following configuration:
+
+```bash
+# Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+```
+
+### Email Subscription Setup
+
+1. Set up your Supabase project and create the email subscriptions table using the SQL script in `supabase_emails_table.sql`
+2. Configure your environment variables with your Supabase credentials
+3. Access the admin panel at `/admin/emails` to view and manage subscriptions
+4. Email subscriptions are collected through the homepage subscription form
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 

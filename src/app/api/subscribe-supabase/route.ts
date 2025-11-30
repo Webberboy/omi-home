@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check for duplicate email in Supabase
+    // Check for duplicate email
     const { data: existingEmail } = await supabase
       .from('email_subscriptions')
       .select('email')
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
     );
 
   } catch (error) {
-    console.error('API error:', error);
+    console.error('Supabase API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
@@ -78,20 +78,22 @@ export async function GET(request: NextRequest) {
 
     if (error) {
       console.error('Supabase fetch error:', error);
-      return NextResponse.json({ error: 'Failed to fetch emails' }, { status: 500 });
+      return NextResponse.json(
+        { error: 'Failed to fetch email subscriptions' },
+        { status: 500 }
+      );
     }
 
-    const emails = (data || []).map(item => ({
-      email: item.email,
-      timestamp: item.created_at,
-      source: item.source,
-      userAgent: item.user_agent || ''
-    }));
-
-    return NextResponse.json({ emails }, { status: 200 });
+    return NextResponse.json(
+      { emails: data || [] },
+      { status: 200 }
+    );
 
   } catch (error) {
-    console.error('API error:', error);
-    return NextResponse.json({ error: 'Failed to fetch emails' }, { status: 500 });
+    console.error('Supabase API error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
   }
 }

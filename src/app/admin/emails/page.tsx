@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 interface EmailEntry {
   email: string;
   timestamp: string;
-  userAgent: string;
+  userAgent?: string;
   source: string;
 }
 

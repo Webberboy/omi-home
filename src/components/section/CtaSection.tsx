@@ -87,8 +87,8 @@ export function FormGet() {
             
             console.log('📡 Sending POST request to /api/subscribe...');
             
-            // Get the base URL - use relative path for same origin, or construct full URL
-            const baseUrl = typeof window !== 'undefined' ? `${window.location.origin}` : '';
+            // Production-ready URL construction
+            const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
             const apiUrl = `${baseUrl}/api/subscribe`;
             
             console.log('🔗 API URL:', apiUrl);
@@ -125,7 +125,7 @@ export function FormGet() {
                     setError(data.error || 'Failed to subscribe. Please try again.');
                 }
             } else {
-                console.log('✅ Email successfully saved to CSV file via API!');
+                console.log('✅ Email successfully saved to Supabase via API!');
                 setIsSubmitted(true);
             }
             
@@ -168,13 +168,22 @@ export function FormGet() {
                     />
                 </fieldset>
                 <button 
-                    className="tf-btn style-2 style-high animate-btn" 
-                    type="submit" 
-                    disabled={isLoading}
-                    onClick={() => console.log('🖱️ Submit button clicked!')}
-                >
-                    <span>{isLoading ? 'Submitting...' : 'Submit'}</span>
-                </button>
+                        className="tf-btn style-2 style-high animate-btn" 
+                        type="submit" 
+                        disabled={isLoading}
+                        onClick={() => console.log('🖱️ Submit button clicked!')}
+                    >
+                        <span>
+                            {isLoading ? (
+                                <div className="flex items-center space-x-2">
+                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    <span>Submitting...</span>
+                                </div>
+                            ) : (
+                                'Submit'
+                            )}
+                        </span>
+                    </button>
             </div>
             {error && (
                 <div className="error-message" style={{color: '#ff4444', marginTop: '10px', fontSize: '14px'}}>

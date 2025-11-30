@@ -21,7 +21,7 @@ CREATE INDEX IF NOT EXISTS idx_emails_created_at ON public.emails (created_at DE
 CREATE OR REPLACE FUNCTION update_updated_at_column()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = timezone('utc'::text, now());
+    NEW.updated_at = NOW();
     RETURN NEW;
 END;
 $$ language 'plpgsql';
@@ -35,6 +35,10 @@ CREATE TRIGGER update_emails_updated_at
 
 -- Enable Row Level Security (RLS)
 ALTER TABLE public.emails ENABLE ROW LEVEL SECURITY;
+
+-- Drop existing policies if they exist
+DROP POLICY IF EXISTS "Allow public read access" ON public.emails;
+DROP POLICY IF EXISTS "Allow public insert access" ON public.emails;
 
 -- Create RLS policies
 CREATE POLICY "Allow public read access" ON public.emails
@@ -65,7 +69,7 @@ BEGIN
     VALUES (p_email, p_supabase_id, p_source, p_ip_address, p_user_agent, p_metadata)
     ON CONFLICT (email) DO UPDATE SET
         supabase_id = EXCLUDED.supabase_id,
-        updated_at = timezone('utc'::text, now()),
+        updated_at = NOW(),
         metadata = public.emails.metadata || EXCLUDED.metadata
     RETURNING id INTO v_email_id;
     

@@ -61,7 +61,9 @@ export function FormGet() {
         console.log('🚀 Email submission started');
         console.log('📋 FormData received:', formData);
         
+        console.log('🎬 Starting loading animation...');
         setIsLoading(true);
+        console.log('✅ Loading animation started - isLoading:', true);
         setError(null);
         
         const email = formData.get('email') as string;
@@ -134,7 +136,9 @@ export function FormGet() {
             setError('Failed to subscribe. Please try again.');
         } finally {
             console.log('🏁 Email submission process completed');
+            console.log('🛑 Stopping loading animation...');
             setIsLoading(false);
+            console.log('✅ Loading animation stopped - isLoading:', false);
         }
     }
 
@@ -155,7 +159,7 @@ export function FormGet() {
             console.log('📝 Form submit event triggered');
             console.log('🎯 Form element:', e.target);
         }}>
-            <div className="form-content">
+            <div className="form-content" style={{position: 'relative'}}>
                 <fieldset>
                     <input 
                         type="email" 
@@ -171,10 +175,47 @@ export function FormGet() {
                     className="tf-btn style-2 style-high animate-btn" 
                     type="submit" 
                     disabled={isLoading}
-                    onClick={() => console.log('🖱️ Submit button clicked!')}
+                    onClick={() => console.log('🖱️ Submit button clicked! Current loading state:', isLoading)}
+                    style={{minWidth: '80px'}} // Ensure button has minimum width
                 >
-                    <span>{isLoading ? 'Submitting...' : 'Submit'}</span>
+                    <span>
+                        {isLoading ? 'Loading...' : 'Submit'}
+                    </span>
                 </button>
+                {/* ULTRA SIMPLE loading spinner beside the button */}
+                {isLoading && (
+                    <div 
+                        style={{
+                            position: 'absolute',
+                            left: 'calc(100% + 30px)',
+                            top: '50%',
+                            transform: 'translateY(-50%)',
+                            backgroundColor: '#ff0000',
+                            padding: '15px',
+                            border: '3px solid #ffff00',
+                            borderRadius: '10px',
+                            zIndex: 9999
+                        }}
+                    >
+                        <div 
+                            style={{
+                                width: '40px',
+                                height: '40px',
+                                backgroundColor: '#00ff00',
+                                border: '5px solid #0000ff',
+                                borderRadius: '50%',
+                                animation: 'spin 0.5s linear infinite'
+                            }}
+                            ref={(el) => {
+                                if (el) {
+                                    console.log('🟢 ULTRA VISIBLE SPINNER created:', el);
+                                    console.log('📍 RED BOX with GREEN/BLUE SPINNER - IMPOSSIBLE TO MISS');
+                                }
+                            }}
+                        ></div>
+                        <div style={{color: 'white', marginTop: '10px', fontWeight: 'bold', fontSize: '16px'}}>SPINNER ACTIVE!</div>
+                    </div>
+                )}
             </div>
             {error && (
                 <div className="error-message" style={{color: '#ff4444', marginTop: '10px', fontSize: '14px'}}>
